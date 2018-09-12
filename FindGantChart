@@ -1,0 +1,46 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeSet;
+
+public class FindGantChart {
+	void findGc(LinkedList queue) {
+		
+		///tempo inicial =0
+		int time = 0;
+
+		/// priority Queue sort class de acordo com
+	    /// para hora de chegada ou prioridade (fila pronta)
+		TreeSet prique = new TreeSet(new MyComparator());
+		
+		/// lista de links para dados de processados da loja
+		LinkedList result = new LinkedList();
+		
+		/// processa na fila pronta da nova fila de estados
+		while (queue.size() > 0)
+			prique.add((Process)queue.removeFirst());
+		Iterator it = prique.iterator();
+		
+		/// hora definida de acordo com o primeiro processo
+		time = ((Process)prique.first()).at;
+		
+		/// processo de agendamento
+		while (it.hasNext()) {
+	    /// dispatcher despacha o
+        /// processa pronto para executar o estado
+		Process obj = (Process)it.next();
+		Process2 gc1 = new Process2();
+		gc1.pno = obj.pno ;
+		gc1.stime = time ;
+		time += obj.bt;
+		gc1.ctime = time ;
+		gc1.ttime = gc1.ctime - obj.at;
+		gc1.wtime = gc1.ttime - obj.bt;
+		
+		/// armazena o processo extraído
+		result.add(gc1);	
+		}
+		/// cria objeto de classe de saída e método de chamada
+		new ResultOutput(result);
+	}
+
+}
