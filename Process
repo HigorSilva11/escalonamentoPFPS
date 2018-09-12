@@ -1,6 +1,7 @@
 
 public class Process {
-	///estrutura de dados
+	Process(){
+	}
 	int at ,bt ,pri ,pno ;
 	Process (int pno ,int at,int bt ,int pri)
 	{
