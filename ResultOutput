@@ -1,0 +1,30 @@
+import java.util.LinkedList;
+
+public class ResultOutput {
+	ResultOutput (LinkedList result)
+	{
+	double wavg = 0 ,tavg = 0;	
+	int totalprocess = result.size();
+	System.out.println("Process_no/tStart_time/t "+
+	"Complete_time/tTrun_Around_Time/tWating_time");
+	
+	// exibe os detalhes do processo
+	while (result.size() > 0) {
+		Process2 obj = (Process2)result.poll();
+		wavg += obj.wtime;
+		tavg += obj.ttime;
+		System.out.println(obj.pno + "/t/t" + obj.stime + "/t/t" +
+		obj.ctime + "/t/t" + obj.ttime + "/t/t" + obj.wtime);
+		
+	}
+	// exibe o tempo médio de espera 
+	// e o tempo médio de retorno
+	System.out.println("Tempo Médio de Espera é : " +
+	(wavg / totalprocess));
+	
+	System.out.println("O tempo médio de retorno é : " + 
+	(tavg / totalprocess));
+		
+	}
+
+}
