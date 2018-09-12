@@ -5,9 +5,11 @@ import java.util.TreeSet;
 public class FindGantChart {
 	void findGc(LinkedList queue) {
 		
-		inicial =0
+		///tempo inicial =0
 		int time1 = 0;
-
+		
+		
+		/// para hora de chegada ou prioridade (fila pronta)
 		TreeSet prique = new TreeSet(new MyComparator());
 		
 		///lista de links para dados de processados da loja
