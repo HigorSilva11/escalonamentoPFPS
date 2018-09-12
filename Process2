@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class Process2 {
+	// número do processo, hora de início, hora completa
+    // tempo de espera, tempo de espera
+	int pno ,stime ,ctime ,wtime ,ttime ;
+	
+}
+
+//método comparativo definido pelo usuário (primeira chegada primeiro saque,
+// se a hora de chegada for igual a alta prioridade primeiro)
+class MyComparator implements Comparator {
+	
+
+	public int compare (Object o1 ,Object o2) {
+		Process p1 =(Process)o1;
+		Process p2 =(Process)o2;
+		if (p1.at < p2.at)
+			return (-1);
+		else if (p1.at == p2.at && p1.pri > p2.pri)
+			return (-1);
+		else 
+			return (1);		
+		
+	}
+}
