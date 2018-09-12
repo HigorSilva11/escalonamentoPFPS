@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 public class Process {
 
 	int at ,bt ,pri ,pno ;
